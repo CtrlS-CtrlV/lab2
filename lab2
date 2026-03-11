@@ -1,0 +1,79 @@
+import math
+
+# 1
+print("Зав. 1")
+for i in range(1, 4):
+    a = float(input(f"Введіть сторону a  {i}: "))
+    b = float(input(f"Введіть сторону b {i}: "))
+    area = a * b
+    print(f"площа прямокутника {i}: {area}")
+
+# 2
+print("\nЗав. 2")
+
+def hypotenuse(a, b):
+    return math.sqrt(a**2 + b**2)
+
+a1 = float(input("Введіть перший катет трикутника: "))
+b1 = float(input("Введіть другий катет трикутника: "))
+
+a2 = float(input("Введіть перший катет другого трикутника: "))
+b2 = float(input("Введіть другий катет другого трикутника: "))
+
+h1 = hypotenuse(a1, b1)
+h2 = hypotenuse(a2, b2)
+
+print("Гіпотенуза трикутника 1:", h1)
+print("Гіпотенуза трикутника 2:", h2)
+
+if h1 > h2:
+    print("Гіпотенуза 1 більша")
+elif h1 < h2:
+    print("Гіпотенуза 2 більша")
+else:
+    print("Гіпотенузи рівні")
+
+# 3
+print("\nЗав. 3")
+
+def point_inside_circle(x, y, a, b, R):
+    return (x - a)**2 + (y - b)**2 < R**2
+
+1 = float(input("Введіть координату 1 центру кола: "))
+2 = float(input("Введіть координату 2 центру кола: "))
+R = float(input("Введіть радіус кола: "))
+
+points = []
+points.append((float(input("p1: ")), float(input("p2: "))))
+points.append((float(input("f1: ")), float(input("f2: "))))
+points.append((float(input("l1: ")), float(input("l2: "))))
+
+count = 0
+for x, y in points:
+    if point_inside_circle(x, y, a, b, R):
+        count += 1
+
+print("Кількість точок всередині кола:", count)
+
+# 4
+print("\nЗав. 4")
+
+X = float(input("Введіть сторону X: "))
+Y = float(input("Введіть сторону Y: "))
+Z = float(input("Введіть сторону Z: "))
+T = float(input("Введіть сторону T: "))
+
+area = (X * Y) / 2 + (Z * T) / 2
+print("Площа чотирикутника:", area)
+
+# 5
+print("\nЗав. 5")
+
+n = int(input("Введіть число n: "))
+d1 = int(input("Введіть перше число: "))
+d2 = int(input("Введіть друге число: "))
+
+print("Числа, що діляться на обидва:")
+for i in range(1, n + 1):
+    if i % d1 == 0 and i % d2 == 0:
+        print(i)
